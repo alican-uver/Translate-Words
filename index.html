@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/dc0c634418.js"></script>
+    <link rel="stylesheet" href="/main.css/style.css">
+    <title>Translate App</title>
+</head>
+
+<body>
+    <div class="container-translate">
+        <form id="form-translate">
+            <!-- TRANSLATE FROM -->
+            <div class="translate-in-container">
+                <div class="container">
+                    <textarea name="translate-in" rows="10" id="translate-in"
+                        placeholder="Çeviri yapmak istediğiniz kelimeyi giriniz..">
+                    </textarea>
+                    <div class="clear-icon">
+                        <i class="fas fa-times d-none" id="clear-word"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- TRANSLATE FROM  END-->
+
+            <!-- TRANSLATE TO  -->
+            <div class="translate-out-container">
+                <div class="container">
+                    <textarea name="translate-out" rows="10" id="translate-out" readonly
+                        placeholder="Çeviri"></textarea>
+                    <!-- <span class="change-language">
+                        <i class="fas fa-angle-up" id="show-language"></i>
+                    </span> -->
+                </div>
+                <div class="select-language">
+                    <select id="languages">
+                        <option value="en">İngilizce</option>
+                        <option value="de">Almanca</option>
+                        <option value="ru">Rusca</option>
+                        <option value="fr">Fransızca</option>
+                        <option value="es">İspanyolca</option>
+                        <option value="zh">Çince</option>
+                        <option value="ko">Korece</option>
+                    </select>
+                </div>
+                <div id="country-flag" style="text-align: center;">
+                    <img src="/img/en.png" id="flag-img" alt="country-flag">
+                </div>
+            </div>
+            <!-- TRANSLATE TO END  -->
+        </form>
+    </div>
+
+    <script src="request.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,10 @@ class UI {
         this.clearIcon = document.getElementById("clear-word");
         this.inputTranslate = document.getElementById("translate-in");   
         this.flagImg = document.getElementById("flag-img");
-        this.languageList = document.getElementById("languages");  
+        this.languageList = document.querySelector(".select-languages");   
+        this.languageName = document.getElementById("language-name");
+        this.lastTranslateWord = document.getElementById("last-translate-word"); 
+        this.lastTranslateWordArea = document.querySelector(".last-translate-word-area");
     };
 
     focusInArea() {
@@ -25,9 +28,24 @@ class UI {
         this.outputTranslate.value = "";
     };
 
-    changeImg() {
-        this.flagImg.src = `/img/${this.languageList.value}.png`;
-    };
+    showLanguageList() {
+        this.languageList.classList.toggle("d-none");
+    }
 
-   
+    showLangImgAndName(lang) {
+        const srcLang = lang.dataset.lang;
+        this.flagImg.src = `/img/${srcLang}.png`;
+        this.languageName.textContent = lang.textContent;      
+        this.showLanguageList();                  
+    }
+
+    showLastTranslateWord() {
+        let words = JSON.parse(localStorage.getItem("lastSearchWord"));
+        if (words == "" ) {
+            this.lastTranslateWordArea.classList.add("d-none");
+        } 
+        else {
+            this.lastTranslateWord.value = words[0];
+        }               
+    }
 }

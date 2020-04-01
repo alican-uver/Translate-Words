@@ -85,6 +85,18 @@ body {
                     color: gray;        
                 };
             };
+            .last-translate-word-area {
+                margin-top: 50px;
+                .search-title{
+                    color: gray;
+                    font-family: $f-family;
+                    margin-bottom: 5px;
+                    text-align: center;
+                }
+                #last-translate-word {
+                    @extend %textArea;
+                }
+            }
         };
         /* TRANSLATE FROM END */
 
@@ -97,22 +109,55 @@ body {
             #translate-out {
                 @extend %textArea;
             };
-            #languages {
-                width:95%;
-                height: 60px;
-                border: none;
-                outline: none;
-                font-size: 20px;
-                background-color: transparent;
-                color: #f1f1f1;
+            .change-language-icon {
+                position: absolute;
+                bottom: 10px;
+                right: 30px;
+                cursor: pointer;
+                font-size: 25px;
+                color: #fff;
             };
+            .language-name-container {
+                font-size: $f-size;
+                font-family: $f-family;
+                margin-bottom: 15px;
+                margin-top: 10px;
+                text-transform: uppercase;
+                color: gray;
+                #language-name {
+                    color: #fff;
+                    letter-spacing: 1px;
+                    text-transform: capitalize;
+                }
+            }
+            
+            /* LANGUAGE LİST */
+            .select-languages {
+                .languages {
+                    list-style: none;
+                    text-align: center;
+                    .language {
+                        display: inline-block;
+                        font-size: 14px;
+                        width: 100px;
+                        padding: 10px;
+                        color: rgb(190, 190, 190);
+                        cursor:progress;
+                        transition: $transition;
+                        &:hover {
+                            color: #fff;
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+            /* LANGUAGE LİST END */
+            #country-flag {
+                text-align: center;
+            }
+
         };
         /* TRANSLATE TO END */
-
-        // .change-language {
-        //     @extend %icons;  
-        //     bottom:10px;
-        // };
     };
 };
 
@@ -125,8 +170,6 @@ body {
         left: 90% !important;
         }
     }
-
-    
 }
 
 // Small devices (landscape phones, less than 768px)

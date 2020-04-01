@@ -17,11 +17,14 @@
             <div class="translate-in-container">
                 <div class="container">
                     <textarea name="translate-in" rows="10" id="translate-in"
-                        placeholder="Çeviri yapmak istediğiniz kelimeyi giriniz..">
-                    </textarea>
+                        placeholder="Çeviri yapmak istediğiniz kelimeyi giriniz.."></textarea>
                     <div class="clear-icon">
                         <i class="fas fa-times d-none" id="clear-word"></i>
                     </div>
+                </div>
+                <div class="last-translate-word-area">
+                    <h2 class="search-title">Son Yapılan Arama</h2>
+                    <textarea name="search-input" id="last-translate-word" rows="3" readonly placeholder="Son Aranan Kelimeler"></textarea>
                 </div>
             </div>
             <!-- TRANSLATE FROM  END-->
@@ -31,22 +34,55 @@
                 <div class="container">
                     <textarea name="translate-out" rows="10" id="translate-out" readonly
                         placeholder="Çeviri"></textarea>
-                    <!-- <span class="change-language">
+                    <span class="change-language-icon">
                         <i class="fas fa-angle-up" id="show-language"></i>
-                    </span> -->
+                    </span>
                 </div>
-                <div class="select-language">
-                    <select id="languages">
-                        <option value="en">İngilizce</option>
-                        <option value="de">Almanca</option>
-                        <option value="ru">Rusca</option>
-                        <option value="fr">Fransızca</option>
-                        <option value="es">İspanyolca</option>
-                        <option value="zh">Çince</option>
-                        <option value="ko">Korece</option>
-                    </select>
+                <div class="select-languages d-none">
+                    <ul class="languages">
+                        <li data-lang="en" class="language">İngilizce</li>
+                        <li data-lang="de" class="language">Almanca</li>
+                        <li data-lang="es" class="language">İspanyolca</li>
+                        <li data-lang="az" class="language">Azerice</li>
+                        <li data-lang="ar" class="language">Arapça</li>
+                        <li data-lang="hy" class="language">Ermenice</li>
+                        <li data-lang="af" class="language">Afrikaans</li>
+                        <li data-lang="be" class="language">Belarusca</li>
+                        <li data-lang="bg" class="language">Bulgarca</li>
+                        <li data-lang="hu" class="language">Macarca</li>
+                        <li data-lang="vi" class="language">Vietnamca</li>
+                        <li data-lang="el" class="language">Yunanca</li>
+                        <li data-lang="id" class="language">Endonezya</li>
+                        <li data-lang="kn" class="language">Kannada</li>
+                        <li data-lang="zh" class="language">Çince</li>
+                        <li data-lang="ko" class="language">Korece</li>
+                        <li data-lang="la" class="language">Latince</li>
+                        <li data-lang="mk" class="language">Makedonca</li>
+                        <li data-lang="mn" class="language">Mongolca</li>
+                        <li data-lang="ne" class="language">Nepali</li>
+                        <li data-lang="fa" class="language">Persçe</li>
+                        <li data-lang="pt" class="language">Portekizce</li>
+                        <li data-lang="ro" class="language">Romence</li>
+                        <li data-lang="ru" class="language">Rusça</li>
+                        <li data-lang="sr" class="language">Sırpça</li>
+                        <li data-lang="th" class="language">Thai</li>
+                        <li data-lang="tr" class="language">Türkçe</li>
+                        <li data-lang="uk" class="language">Ukraynaca</li>
+                        <li data-lang="fr" class="language">Fransızca</li>
+                        <li data-lang="hi" class="language">Hintçe</li>
+                        <li data-lang="cs" class="language">Çekçe</li>
+                        <li data-lang="sv" class="language">İsveçce</li>
+                        <li data-lang="et" class="language">Estonyaca</li>
+                        <li data-lang="ja" class="language">Japonca</li>
+                        <li data-lang="tt" class="language">Tatarca</li>
+                    </ul>
                 </div>
-                <div id="country-flag" style="text-align: center;">
+                <div id="country-flag">
+                    <div class="language-name-container">Çevrilen Dil:
+                        <span id="language-name">
+                            İngilizce
+                        </span>
+                    </div>
                     <img src="/img/en.png" id="flag-img" alt="country-flag">
                 </div>
             </div>
@@ -54,6 +90,7 @@
         </form>
     </div>
 
+    <script src="storage.js"></script>
     <script src="request.js"></script>
     <script src="ui.js"></script>
     <script src="app.js"></script>

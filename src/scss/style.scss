@@ -175,6 +175,11 @@ body {
       width: 60px !important;
     }
   }
+
+  %textArea {
+   border: 1px solid gray;
+  }
+
 }
 
 // Small devices (landscape phones, less than 768px)
@@ -191,6 +196,10 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  %textArea {
+    border: 1px solid gray;
+   }
 }
 
 // Medium devices (tablets, less than 992px)
@@ -203,8 +212,9 @@ body {
 
   %textArea {
     width: 85%;
+    border: 1px solid gray;
   }
-
+  
 }
 
 // Large devices (desktops, less than 1200px)
@@ -217,6 +227,7 @@ body {
 
   %textArea {
     width: 85%;
+    border: 1px solid gray;
   }
 }
 

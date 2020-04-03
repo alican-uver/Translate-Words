@@ -1,4 +1,5 @@
 export class UI {
+    
     constructor() {
         this.outputTranslate = document.getElementById("translate-out");
         this.clearIcon = document.getElementById("clear-word");

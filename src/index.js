@@ -40,6 +40,7 @@ function allEventListeners() {
         lang.addEventListener("click", () => {
             selectedLang = lang.dataset.lang;
             ui.showLangImgAndName(lang);
+            clickedChangeLanguage();
         })
     })
 
@@ -59,37 +60,28 @@ function allEventListeners() {
 };
 
 function translateWord(e) {  
-        let word = e.target.value.trim();
-        Storage.addToStorage(word); 
-        
-        if (word !== "" && selectedLang !== "") {
-            translate.translateNewWord(word, selectedLang);
-        }
+    let word = e.target.value.trim();
+    Storage.addToStorage(word); 
+    
+    if (word !== "" && selectedLang !== "") {
+        getWordWithRequest(word, selectedLang)
+    }
 
-        if (word !== "" && selectedLang == "") {
-            selectedLang = "en";
-            translate.translateNewWord(word, selectedLang);
-        }
-
-        translate.translateWord()
-            .then((result) => {
-                ui.showResult(result.text[0])
-            }).catch((err) => {
-                console.log(err)
-            });
+    if (word !== "" && selectedLang == "") {
+        getWordWithRequest(word, "en")
+    }
 };
 
+function clickedChangeLanguage() {  // Function that will work again if language changes are made
+    let word = translateInArea.value;
+    getWordWithRequest(word, selectedLang)
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function getWordWithRequest(word,language) { // Global Request Function !
+    translate.translateWord(word,language)
+        .then((result) => {
+            ui.showResult(result.text[0])
+        }).catch((err) => {
+            console.log(err)
+        });
+}

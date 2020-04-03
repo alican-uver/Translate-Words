@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/dc0c634418.js"></script>
-    <link rel="stylesheet" href="/main.css/style.css">
     <title>Translate App</title>
 </head>
-
 <body>
     <div class="container-translate">
         <form id="form-translate">
@@ -18,12 +16,17 @@
                 <div class="container">
                     <textarea name="translate-in" rows="10" id="translate-in"
                         placeholder="Çeviri yapmak istediğiniz kelimeyi giriniz.."></textarea>
-                    <div class="clear-icon">
+                    <span class="clear-icon">
                         <i class="fas fa-times d-none" id="clear-word"></i>
-                    </div>
+                    </span>
                 </div>
                 <div class="last-translate-word-area">
-                    <h2 class="search-title">Son Yapılan Arama</h2>
+                    <h2 class="search-title">                   
+                        <span>Son Yapılan Çeviri</span>
+                        <span class="clear-last-search">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </h2>
                     <textarea name="search-input" id="last-translate-word" rows="3" readonly placeholder="Son Aranan Kelimeler"></textarea>
                 </div>
             </div>
@@ -83,17 +86,15 @@
                             İngilizce
                         </span>
                     </div>
-                    <img src="/img/en.png" id="flag-img" alt="country-flag">
+                    <img src="./src/img/en.png" id="flag-img" alt="country-flag">
                 </div>
             </div>
             <!-- TRANSLATE TO END  -->
         </form>
     </div>
 
-    <script src="storage.js"></script>
-    <script src="request.js"></script>
-    <script src="ui.js"></script>
-    <script src="app.js"></script>
+    <script src="/bundles/bundle.js"></script>
+    <!-- <script src="{PATH}/alertify.min.js"></script> -->
 </body>
 
 </html>

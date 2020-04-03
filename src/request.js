@@ -1,4 +1,4 @@
-class Request {
+export class Request {
 
     constructor(word, language) {
         this.apikey = "trnsl.1.1.20200130T123814Z.fedc09f74bbdfbc9.ecf2fae2c44ef9d06ec895253b8360bc98a6e64b"

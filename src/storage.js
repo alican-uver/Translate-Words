@@ -1,4 +1,4 @@
-class Storage {
+export class Storage {  // Upload searched words to storage
     static addToStorage(word) {
         let lastSearchedWord; 
         

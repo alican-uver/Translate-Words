@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+/* Global Settings */
+$f-size: 20px;
+$f-family: Roboto, sans-serif;
+$transition: all 0.3s ease;
+$text-color: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-weight: 300;
+}
+
+body {
+  width: 100%;
+  font-family: $f-family;
+  background-color: #2c3e50;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Global Settings End */
+
+%icons {
+  font-size: 25px;
+  cursor: pointer;
+  color: $text-color;
+  transition: $transition;
+  &:hover {
+    color: gray;
+  }
+}
+
+%textArea {
+  width: 90%;
+  border: none;
+  font-size: $f-size;
+  font-family: $f-family;
+  color: $text-color;
+  outline: none;
+  transition: $transition;
+  resize: none;
+  padding: 20px 40px 30px 15px;
+  text-align: justify;
+  border-radius: 10px;
+  background-color: transparent;
+  text-indent: 0;
+  -webkit-box-shadow: 3px 0px 20px 1px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 3px 0px 20px 1px rgba(0, 0, 0, 0.42);
+  box-shadow: 3px 0px 20px 1px rgba(0, 0, 0, 0.42);
+}
+
+.container-translate {
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+
+  #form-translate {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* TRANSLATE FROM */
+    .translate-in-container {
+      width: 100%;
+      .container {
+        position: relative;
+      }
+      #translate-in {
+        @extend %textArea;
+        &:focus {
+          border: 2px solid #f39c12;
+        }
+      }
+      .clear-icon {
+        @extend %icons;
+        position: absolute;
+        top: 15px;
+        left: 95%;
+      }
+      .last-translate-word-area {
+        margin-top: 50px;
+        .search-title {
+          color: gray;
+          font-family: $f-family;
+          margin-bottom: 5px;
+          text-align: center;
+        }
+        #last-translate-word {
+          @extend %textArea;
+          color: #f39c12;
+        }
+        .clear-last-search {
+          @extend %icons;
+          margin-left: 10px;
+        }
+      }
+    }
+    /* TRANSLATE FROM END */
+
+    /* TRANSLATE TO */
+    .translate-out-container {
+      width: 100%;
+      .container {
+        position: relative;
+      }
+      #translate-out {
+        @extend %textArea;
+      }
+      .change-language-icon {
+        @extend %icons;
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+        #show-language {
+          transition: $transition;
+        }
+      }
+      .language-name-container {
+        font-size: $f-size;
+        font-family: $f-family;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        color: gray;
+        #language-name {
+          color: $text-color;
+          letter-spacing: 1px;
+          text-transform: capitalize;
+        }
+      }
+
+      /* LANGUAGE LİST */
+      .select-languages {
+        .languages {
+          list-style: none;
+          text-align: center;
+          .language {
+            display: inline-block;
+            font-size: 14px;
+            width: 100px;
+            padding: 10px;
+            color: rgb(190, 190, 190);
+            cursor: progress;
+            transition: $transition;
+            &:hover {
+              color: $text-color;
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+      /* LANGUAGE LİST END */
+      #country-flag {
+        text-align: center;
+      }
+    }
+    /* TRANSLATE TO END */
+  }
+}
+
+/* Media Query */
+// Extra small devices (portrait phones, less than 576px)
+@media screen and (max-width: 575.98px) {
+  .translate-in-container {
+    .clear-icon {
+      left: 95% !important;
+    }
+  }
+  .select-languages {
+    .language {
+      width: 60px !important;
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .translate-in-container {
+    .clear-icon {
+      left: 90% !important;
+    }
+  }
+
+  #form-translate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .translate-in-container {
+    .clear-icon {
+      left: 90% !important;
+    }
+  }
+
+  %textArea {
+    width: 85%;
+  }
+
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  .translate-in-container {
+    .clear-icon {
+      left: 90% !important;
+    }
+  }
+
+  %textArea {
+    width: 85%;
+  }
+}
+
+/* Media Query End */
+
+/* Animations */
+
+.rotate-animation #show-language {
+  // When I click the icons its rotate
+  transform: rotate(180deg);
+}
+
+/* Animations End */

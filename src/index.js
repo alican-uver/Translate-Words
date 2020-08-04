@@ -33,7 +33,6 @@ function allEventListeners() {
 
     showLanguageIcon.addEventListener("click", () => {
         ui.showLanguageList();
-        
     })
 
     languages.forEach(lang => {
@@ -54,15 +53,15 @@ function allEventListeners() {
 
     // !!! If desired, all click events can be managed in the ui.js class, under just one function in this way, with event capturing.
     // !!but i didn't do that.
-    // form.addEventListener("click", e => {  
+    // form.addEventListener("click", e => {
     //     ui.manageClickEvents(e);
-    // }) 
+    // })
 };
 
-function translateWord(e) {  
+function translateWord(e) {
     let word = e.target.value.trim();
-    Storage.addToStorage(word); 
-    
+    Storage.addToStorage(word);
+
     if (word !== "" && selectedLang !== "") {
         getWordWithRequest(word, selectedLang)
     }
